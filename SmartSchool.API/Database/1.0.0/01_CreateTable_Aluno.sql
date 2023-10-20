@@ -1,0 +1,12 @@
+CREATE TABLE Aluno 
+    (
+     Id BIGINT NOT NULL CONSTRAINT Aluno_PK PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+     Nome VARCHAR (100) NOT NULL , 
+     Sobrenome VARCHAR (100) NOT NULL ,
+     Matricula BIGINT NOT NULL ,
+     Telefone VARCHAR (11) NOT NULL ,
+     DataNasc TIMESTAMP NOT NULL ,
+     DataIni TIMESTAMP NOT NULL , 
+     DataFim TIMESTAMP,
+     Ativo BOOLEAN NOT NULL
+    );

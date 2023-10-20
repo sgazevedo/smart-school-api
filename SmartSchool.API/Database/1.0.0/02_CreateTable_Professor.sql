@@ -1,0 +1,11 @@
+CREATE TABLE Professor 
+    (
+     Id BIGINT NOT NULL CONSTRAINT Professor_PK PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+     Nome VARCHAR (100) NOT NULL , 
+     Sobrenome VARCHAR (100) NOT NULL ,
+     Registro BIGINT NOT NULL ,
+     Telefone VARCHAR (11) ,
+     DataIni TIMESTAMP NOT NULL , 
+     DataFim TIMESTAMP,
+     Ativo BOOLEAN NOT NULL
+    );
