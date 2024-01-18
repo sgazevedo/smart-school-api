@@ -1,7 +1,3 @@
-using System;
-using System.IO;
-using System.Reflection;
-using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SmartSchool.API.Data;
+using System;
+using System.IO;
+using System.Reflection;
 
 namespace SmartSchool.API
 {
@@ -28,7 +27,7 @@ namespace SmartSchool.API
         {
             services.AddDbContext<SmartContext>(context => 
             {
-                context.UseNpgsql(Configuration.GetConnectionString("PotgresConnection"));
+                context.UseSqlite(Configuration.GetConnectionString("Default"));
             });
 
             services.AddControllers()

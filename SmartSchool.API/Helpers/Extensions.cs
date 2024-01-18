@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Linq;
 
 namespace SmartSchool.API.Helpers
 {
@@ -18,9 +15,9 @@ namespace SmartSchool.API.Helpers
             var camelCaseFormatter = new JsonSerializerSettings();
             camelCaseFormatter.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
-            response.Headers.Add("Pagination", JsonConvert.SerializeObject(
+            response.Headers.Append("Pagination", JsonConvert.SerializeObject(
                 paginationHeader, camelCaseFormatter));
-            response.Headers.Add("Access-Control-Expose-Header", "Pagination");
+            response.Headers.Append("Access-Control-Expose-Header", "Pagination");
         }
     }
 }

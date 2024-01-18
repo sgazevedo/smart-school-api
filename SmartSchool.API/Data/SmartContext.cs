@@ -22,8 +22,12 @@ namespace SmartSchool.API.Data
             builder.HasDefaultSchema("public")
                     .UseIdentityAlwaysColumns();
 
+            builder.Entity<Aluno>()
+                .HasKey(m => m.Id);
             builder.Entity<AlunoDisciplina>()
                 .HasKey(AD => new {AD.AlunoId, AD.DisciplinaId});
+            
+            base.OnModelCreating(builder);
         }
     }
 }
